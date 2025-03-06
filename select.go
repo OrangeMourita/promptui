@@ -51,7 +51,7 @@ type Select struct {
 	// HideHelp sets whether to hide help information.
 	HideHelp bool
 
-	// HideLabel sets whether to hide the text displayer on top of the list.
+	// HideLabel sets whether to hide the text displayed on top of the list.
 	HideLabel bool
 
 	// HideSelected sets whether to hide the text displayed after an item is successfully selected.
@@ -523,6 +523,9 @@ type SelectWithAdd struct {
 
 	// HideHelp sets whether to hide help information.
 	HideHelp bool
+
+	// HideLabel sets whether to hide the text displayed on top of the list.
+	HideLabel bool
 }
 
 // Run executes the select list. Its displays the label and the list of items, asking the user to chose any
@@ -546,6 +549,7 @@ func (sa *SelectWithAdd) Run() (int, string, error) {
 			Items:     newItems,
 			IsVimMode: sa.IsVimMode,
 			HideHelp:  sa.HideHelp,
+			HideLabel: sa.HideLabel,
 			Size:      5,
 			list:      list,
 			Pointer:   sa.Pointer,
